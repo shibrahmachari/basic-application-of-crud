@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+<head>
+<title>GOT</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+</head>
+<body data-spy="scroll" data-target="#title" data-offset="0">
+<nav class="navbar navbar-dark navbar-fixed-top row"  style="background-color:black;" id="title">
+  <ul class="nav fixed-top bg-dark text-white ">
+  <li class="nav-item">
+    <a class="nav-link active text-white" href="#" style="font-size:40px; font-weight: bold;">DEVBLOG</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link text-white" href="#about" style="font-size:25px; font-weight: bold;position:relative; left: 500px;">HOME</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link text-white" href="/blog" style="font-size:25px; font-weight: bold;position:relative; left: 500px;">BLOGS</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link text-white" href="/blog/new" style="font-size:25px; font-weight: bold;position:relative; left: 500px;">CONTRIBUTE</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link text-white" href="#contact" style="font-size:25px; font-weight: bold;position:relative; left: 500px;">CONTACT</a>
+  </li>
+</ul>
+</nav>
+<% blogs.forEach(function(blog){%>
+<div class= " card " style="width: 18rem;position:relative; left:50px;">
+<img class="card-img-top"src="<%= blog.image%>" style="height:230px;">
+<div class="card-body">
+  <h2 class="card-title"><%= blog.title%></h2>
+<span class="card-text"><%= blog.created%></span>
+<p><%= blog.body.substring(0,100)%>.....</p>
+<a href="/blog/<%=blog._id%>"> read more</a>
+</div>
+</div>
+<%})%>
+
+</body>
+</html>

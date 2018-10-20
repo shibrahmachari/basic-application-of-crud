@@ -1,0 +1,35 @@
+/** This is the code for editing any chosen blog and redirect it to the show route page where all the blogs are being displayed**/
+<!doctype html>
+<html>
+<head>
+<title>GOT</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+</head>
+<body data-spy="scroll" data-target="#title" data-offset="0" class="bg-light">
+  <ul class="nav fixed-top bg-info text-white ">
+  <li class="nav-item">
+    <a class="nav-link active text-dark" href="#" style="font-size:40px; font-weight: bold;">DEVBLOG</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link text-dark" href="#about" style="font-size:25px; font-weight: bold;position:relative; left: 500px;">HOME</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link text-dark" href="#" style="font-size:25px; font-weight: bold;position:relative; left: 500px;">BLOGS</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link text-dark" href="#" style="font-size:25px; font-weight: bold;position:relative; left: 500px;">CONTRIBUTE</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link text-dark" href="#contact" style="font-size:25px; font-weight: bold;position:relative; left: 500px;">CONTACT</a>
+  </li>
+</ul>
+<form action="/blog/<%=blog._id%>?_method=put" method="POST">
+<input class="form-control form-control-lg"  type="text" name=blog[title] value="<%=blog.title%>" style="position:relative;top:100px; left:300px; width:700px;"><br>
+<input class="form-control form-control-lg" type="text" name=blog[image] value="<%=blog.image%>" style="position:relative;top:100px;left:300px;width:700px;"><br>
+<textarea class="form-control form-control-lg" type="text" name=blog[body]  style="position:relative; top:150px;left:300px;width:600px; height:200px;" ><%=blog.body%></textarea>
+<input type="submit" class="btn btn-primary" style="position:relative;top:100px;left:300px;">
+</form>
+</body>
+</html>
